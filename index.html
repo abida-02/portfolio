@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio - Your Name</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background: #f4f4f4; color: #333; }
+        h1, h2 { color: #005a9c; }
+        .section { margin-bottom: 1.5em; }
+        .collapsible { background-color: #eee; cursor: pointer; padding: 10px; border: none; text-align: left; outline: none; font-size: 16px; width: 100%; }
+        .active, .collapsible:hover { background-color: #ccc; }
+        .content { padding: 0 18px; display: none; overflow: hidden; background-color: #f9f9f9; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 0.5em; margin-bottom: 1em; }
+        .contact-form button { padding: 0.7em; background-color: #005a9c; color: white; border: none; cursor: pointer; }
+        .contact-form button:hover { background-color: #003f6b; }
+    </style>
+</head>
+<body>
+    <h1>Your Name</h1>
+    <p><a href="CV.pdf" download>Download CV</a></p>
+
+    <div class="section">
+        <button class="collapsible">Research</button>
+        <div class="content">
+            <p>Describe your research projects here...</p>
+        </div>
+
+        <button class="collapsible">Teaching</button>
+        <div class="content">
+            <p>Describe your teaching experience here...</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Contact Me</h2>
+        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p><small>Replace <code>your-form-id</code> in the action URL with your Formspree endpoint.</small></p>
+    </div>
+
+    <script>
+        const coll = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
